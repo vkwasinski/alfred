@@ -54,6 +54,8 @@ sub write_log {
     my $logfile = resolve_logfile $task;
     my $lt      = localtime;
 
+    return  if not defined $message;
+
     my $logline = sprintf("[%4d-%02d-%02d %02d:%02d:%02d][%s][%s] %s\n",
         $lt->year+1900,
         $lt->mon+1,
